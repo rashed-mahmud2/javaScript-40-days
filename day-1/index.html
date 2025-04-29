@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script defer src="script.js"></script> -->
+</head>
+
+<body>
+
+    <h1>Welcome to Javascript</h1>
+
+
+    <!-- Here a thing sould be noted. If we use script tag in head tag the script can't find the 'divId' that's result a error occoured. But if we use defer attribute in script tag then it work. Now a coomon question has been arrive that is how defer and asyinc work .
+     * we can learn it form tapascript youtube chaneel. -->
+
+    <div id="divId"></div>
+
+
+    <!-- It should be noted that when we have given async or defer on script tag, on script.js document.write function did't work. And my console show me that it isn't possible to 'write' into a 'document' form an asyichronously-loaded external script unless it is explicity opened.  
+     
+    The error message:
+
+"Failed to execute 'write' on 'Document': It isn't possible to write into a document from an asynchronously-loaded external script unless it is explicitly opened."
+
+means:
+
+You are trying to use document.write() inside a script that is loaded asynchronously (with async or defer).
+
+But document.write() is a very old method that only works while the page is still loading — not after it's already loaded or partially loaded.
+
+Async scripts are loaded after the page starts loading.
+So document.write() doesn't work safely there, and the browser blocks it to prevent problems.
+
+In short:
+✅ document.write() should only be used inside normal scripts before the page finishes loading.
+🚫 Never use document.write() inside async scripts — it causes errors. -->
+
+    <!-- without document.write() function we can use script tag with defer attribute  safely. And in such away we should use srcipt in head tag. -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
